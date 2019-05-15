@@ -1,6 +1,6 @@
 package servlets;
 
-import service.userService.UserService;
+import userService.UserService;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -9,10 +9,10 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 public class SignUpServlet extends HttpServlet {
-    private  UserService userService;
+    private  UserService userService = new UserService();
 
-    public SignUpServlet(UserService userService) {
-        this.userService = userService;
+    public SignUpServlet() {
+
     }
 
     @Override
