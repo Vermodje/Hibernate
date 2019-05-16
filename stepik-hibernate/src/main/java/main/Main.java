@@ -13,8 +13,8 @@ public class Main {
     public static void main(String[] args) throws Exception {
 
         ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
-        context.addServlet(new ServletHolder(new SignUpServlet()), "/api/v1/sessions/signup");
-        context.addServlet(new ServletHolder(new SignInServlet()), "/api/v1/sessions/signin");
+        context.addServlet(new ServletHolder(new SignUpServlet()), "/signup");
+        context.addServlet(new ServletHolder(new SignInServlet()), "/signin");
         ResourceHandler resource_handler = new ResourceHandler();
         resource_handler.setResourceBase("public_html");
         HandlerList handlers = new HandlerList();
