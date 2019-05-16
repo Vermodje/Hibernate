@@ -32,9 +32,10 @@ public class SignInServlet extends HttpServlet {
             return;
 
         }
-        resp.setStatus(HttpServletResponse.SC_OK);
-        resp.getWriter().println("Authorized: " + login);
-
+        else {
+            resp.setStatus(HttpServletResponse.SC_OK);
+            resp.getWriter().println("Authorized: " + login);
+        }
 
     }
 }
