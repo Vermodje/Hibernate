@@ -21,7 +21,6 @@ public class SignUpServlet extends HttpServlet {
         String pass = req.getParameter("password");
         if (login == null || pass == null){
             resp.getWriter().println("Please add login or password");
-            return;
         }
         else {
                 userService.addUser(login,pass);

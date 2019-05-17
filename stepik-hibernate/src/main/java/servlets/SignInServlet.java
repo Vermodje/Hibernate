@@ -29,7 +29,6 @@ public class SignInServlet extends HttpServlet {
         if (users == null || !users.getPass().equals(pass)) {
             resp.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
             resp.getWriter().println("Unauthorized");
-            return;
 
         }
         else {

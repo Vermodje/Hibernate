@@ -25,7 +25,7 @@ public class Utils {
         return sessionFactory;
     }
 
-    private Configuration getH2Configuration() {
+    /*private Configuration getH2Configuration() {
         Configuration configuration = new Configuration();
         configuration.addAnnotatedClass(Users.class);
         configuration.setProperty("hibernate.dialect", "org.hibernate.dialect.H2Dialect");
@@ -36,8 +36,8 @@ public class Utils {
         configuration.setProperty("hibernate.show_sql","true" );
         configuration.setProperty("hibernate.hbm2ddl.auto", "create");
         return configuration;
-    }
-    /*private Configuration getH2Configuration() {
+    }*/
+    private Configuration getH2Configuration() {
         Configuration configuration = new Configuration();
         configuration.addAnnotatedClass(Users.class);
         configuration.setProperty("hibernate.dialect", "org.hibernate.dialect.H2Dialect");
@@ -48,7 +48,7 @@ public class Utils {
         configuration.setProperty("hibernate.show_sql", hibernate_show_sql);
         configuration.setProperty("hibernate.hbm2ddl.auto", hibernate_hbm2ddl_auto);
         return configuration;
-    }*/
+    }
     private Configuration getMySqlConfiguration() {
         Configuration configuration = new Configuration();
         configuration.addAnnotatedClass(Users.class);
