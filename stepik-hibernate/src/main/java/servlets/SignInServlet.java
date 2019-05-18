@@ -21,12 +21,10 @@ public class SignInServlet extends HttpServlet {
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String login = req.getParameter("login");
-        String pass = req.getParameter("password");
-        /*if (login == null) {
-            resp.getWriter().println("Please enter login or password");
-        }*/
+        String password = req.getParameter("password");
+
         Users users = userService.getUsersByLogin(login);
-        if (users == null || !users.getPass().equals(pass)) {
+        if (users == null || !users.getPassword().equals(password)) {
             resp.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
             resp.getWriter().println("Unauthorized");
 

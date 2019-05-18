@@ -18,12 +18,12 @@ public class SignUpServlet extends HttpServlet {
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String login = req.getParameter("login");
-        String pass = req.getParameter("password");
-        if (login == null || pass == null){
+        String password = req.getParameter("password");
+        if (login == null || password == null){
             resp.getWriter().println("Please add login or password");
         }
         else {
-                userService.addUser(login,pass);
+                userService.addUser(login,password);
             resp.getWriter().println("User was added");
         }
 

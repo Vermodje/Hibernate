@@ -20,25 +20,25 @@ public class Users implements Serializable {
     @NotNull
     private String login;
 
-    @Column(name = "pass")
+    @Column(name = "password")
     @NotNull
-    private String pass;
+    private String password;
 
 
     public Users() {
     }
 
 
-    public Users(long id, String login, String pass) {
+    public Users(long id, String login, String password) {
         this.setId(id);
         this.setLogin(login);
-        this.setPass(pass);
+        this.setPassword(password);
     }
 
-    public Users(String login, String pass) {
+    public Users(String login, String password) {
         this.setId(-1);
         this.setLogin(login);
-        this.setPass(pass);
+        this.setPassword(password);
     }
 
 
@@ -58,17 +58,17 @@ public class Users implements Serializable {
         this.id = id;
     }
 
-    public String getPass() {
-        return pass;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPass(String pass) {
-        this.pass = pass;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override
     public String toString() {
-        return "Users { id = " + id + ", login = " + login + ", pass = " + pass + "}";
+        return "Users { id = " + id + ", login = " + login + ", password = " + password + "}";
     }
 
 }

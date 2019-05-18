@@ -25,6 +25,8 @@ public class Utils {
         return sessionFactory;
     }
 
+    // Settings for my H2 base
+
     /*private Configuration getH2Configuration() {
         Configuration configuration = new Configuration();
         configuration.addAnnotatedClass(Users.class);
@@ -37,6 +39,9 @@ public class Utils {
         configuration.setProperty("hibernate.hbm2ddl.auto", "create");
         return configuration;
     }*/
+
+    //Settings for Test system
+
     private Configuration getH2Configuration() {
         Configuration configuration = new Configuration();
         configuration.addAnnotatedClass(Users.class);

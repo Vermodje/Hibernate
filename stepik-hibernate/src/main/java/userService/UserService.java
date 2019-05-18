@@ -4,23 +4,25 @@ import dao.UsersDao;
 import users.Users;
 
 public class UserService {
-//private Utils utils;
+
     private UsersDao usersDao = new UsersDao();
+
     public UserService() {
-        //utils = new Utils();
+
     }
 
-    public long addUser(String login, String pass) {
-        //UsersDao usersDao = new UsersDao();
-        return usersDao.insertUser(login, pass);
+    public long addUser(String login, String password) {
+
+        return usersDao.insertUser(login, password);
     }
 
     public Users getUserById(long id) {
-        //UsersDao usersDao = new UsersDao();
+
         return usersDao.getUsers(id);
     }
-    public Users getUsersByLogin(String login){
-        //UsersDao usersDao = new UsersDao();
+
+    public Users getUsersByLogin(String login) {
+
         return usersDao.getUsersByLogin(login);
     }
 
