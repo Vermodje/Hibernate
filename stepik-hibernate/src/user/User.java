@@ -1,4 +1,4 @@
-package users;
+package user;
 
 import com.sun.istack.internal.NotNull;
 
@@ -7,7 +7,7 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "users")
-public class Users implements Serializable {
+public class User implements Serializable {
 
     private static final long serialVersionUID = -8706689714326132798L;
 
@@ -23,24 +23,20 @@ public class Users implements Serializable {
     @Column(name = "password")
     @NotNull
     private String password;
+    public User(){
 
-
-    public Users() {
     }
 
-
-    public Users(long id, String login, String password) {
+    public User(long id, String login, String password) {
         this.setId(id);
         this.setLogin(login);
         this.setPassword(password);
     }
-
-    public Users(String login, String password) {
+    public User(String login, String password) {
         this.setId(-1);
         this.setLogin(login);
         this.setPassword(password);
     }
-
 
     public String getLogin() {
         return login;
@@ -66,9 +62,5 @@ public class Users implements Serializable {
         this.password = password;
     }
 
-    @Override
-    public String toString() {
-        return "Users { id = " + id + ", login = " + login + ", password = " + password + "}";
-    }
 
 }

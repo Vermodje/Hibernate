@@ -1,19 +1,19 @@
-package utils;
+package util;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
-import users.Users;
+import user.User;
 
 
-public class Utils {
+public class Util {
     private Configuration configuration;
     private SessionFactory sessionFactory;
     private static final String hibernate_show_sql = "true";
     private static final String hibernate_hbm2ddl_auto = "create";
 
-    public Utils() {
+    public Util() {
         configuration = getH2Configuration();
         sessionFactory = createSessionFactory(configuration);
     }
@@ -27,9 +27,9 @@ public class Utils {
 
     // Settings for my H2 base
 
-    /*private Configuration getH2Configuration() {
+    private Configuration getH2Configuration() {
         Configuration configuration = new Configuration();
-        configuration.addAnnotatedClass(Users.class);
+        configuration.addAnnotatedClass(User.class);
         configuration.setProperty("hibernate.dialect", "org.hibernate.dialect.H2Dialect");
         configuration.setProperty("hibernate.connection.driver_class", "org.h2.Driver");
         configuration.setProperty("hibernate.connection.url", "jdbc:h2:tcp://localhost/~/test");
@@ -38,13 +38,13 @@ public class Utils {
         configuration.setProperty("hibernate.show_sql","true" );
         configuration.setProperty("hibernate.hbm2ddl.auto", "create");
         return configuration;
-    }*/
+    }
 
     //Settings for Test system
 
-    private Configuration getH2Configuration() {
+    /*private Configuration getH2Configuration() {
         Configuration configuration = new Configuration();
-        configuration.addAnnotatedClass(Users.class);
+        configuration.addAnnotatedClass(User.class);
         configuration.setProperty("hibernate.dialect", "org.hibernate.dialect.H2Dialect");
         configuration.setProperty("hibernate.connection.driver_class", "org.h2.Driver");
         configuration.setProperty("hibernate.connection.url", "jdbc:h2:./h2db");
@@ -56,7 +56,7 @@ public class Utils {
     }
     private Configuration getMySqlConfiguration() {
         Configuration configuration = new Configuration();
-        configuration.addAnnotatedClass(Users.class);
+        configuration.addAnnotatedClass(User.class);
         configuration.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
         configuration.setProperty("hibernate.connection.driver_class", "com.mysql.jdbc.Driver");
         configuration.setProperty("hibernate.connection.url", "jdbc:mysql://localhost:3306/db_example");
@@ -65,7 +65,7 @@ public class Utils {
         configuration.setProperty("hibernate.show_sql", hibernate_show_sql);
         configuration.setProperty("hibernate.hbm2ddl.auto", hibernate_hbm2ddl_auto);
         return configuration;
-    }
+    }*/
 
     private static SessionFactory createSessionFactory(Configuration configuration) {
         StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder();
